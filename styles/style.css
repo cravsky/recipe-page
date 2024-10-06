@@ -1,3 +1,19 @@
+@font-face {
+    font-family: 'Young Serif';
+    src: url(./assets/fonts/YoungSerif-Regular.woff2) format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Outfit';
+    src: url(./assets/fonts/Outfit) format('woff2');
+    font-weight: 400 700;
+    font-style: normal;
+    font-display: swap;
+}
+
 body {
     background-color: var(--stone-100);
 }
@@ -14,10 +30,75 @@ article.card {
     background-color: var(--white);
     border-radius: var(--spacing-300);
     padding: var(--spacing-500);
-    width: 46rem; /* 736px */
+    width: 46rem;
+    /* 736px */
 }
 
-img{
+img {
     border-radius: var(--spacing-150);
-    height:18.75rem; /* 300px */
+    height: 18.75rem;
+    /* 300px */
+}
+
+header {
+    margin-top: var(--spacing-500);
+}
+
+header h1 {
+    margin-bottom: var(--spacing-300);
+    font-family: 'Young Serif', serif;
+    font-size: var(--text-preset-1);
+    color: var(--stone-900);
+    line-height: var(--spacing-500);
+}
+
+header p {
+    font-family: 'Outfit', sans-serif;
+    font-size: var(--text-preset-4);
+    color: var(--stone-600);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    display: flex;
+    align-items: center;
+}
+
+li::before {
+    display: inline-block;
+    content: '';
+    width: var(--spacing-200);
+    height: var(--spacing-300);
+    margin: 0 var(--spacing-200) 0 var(--spacing-100);
+    background-image: url('../assets/images/ellipse1.svg');
+    background-repeat: no-repeat;
+    background-position: center left;
+}
+
+section.preparation {
+    padding: var(--spacing-300);
+    font-family: 'Outfit', sans-serif;
+}
+
+section.preparation h2 {
+    font-size: var(--text-preset-3);
+    line-height: var(--text-preset-3);
+    margin-bottom: var(--spacing-200);
+    font-weight: 600;
+    color: var(--rose-800);
+}
+
+section.preparation ul {
+    color: var(--stone-600);
+    line-height: var(--spacing-300);
+    font-weight: 700;
+    font-size: var(--text-preset-4);
+}
+
+section.preparation ul li span {
+    font-weight: 400;
 }
