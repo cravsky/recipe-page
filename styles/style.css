@@ -1,14 +1,14 @@
 @font-face {
     font-family: 'Young Serif';
-    src: url(./assets/fonts/YoungSerif-Regular.woff2) format('woff2');
+    src: url(../assets/fonts/young-serif/YoungSerif-Regular.ttf) format('woff2');
     font-weight: 400;
     font-style: normal;
-    font-display: swap;
+    /* font-display: swap; */
 }
 
 @font-face {
     font-family: 'Outfit';
-    src: url(./assets/fonts/Outfit) format('woff2');
+    src: url(../assets/fonts/outfit/Outfit-VariableFont_wght.ttf) format('woff2');
     font-weight: 400 700;
     font-style: normal;
     font-display: swap;
@@ -52,10 +52,15 @@ header h1 {
     line-height: var(--spacing-500);
 }
 
-header p {
+header p,
+.nutrition p {
     font-family: 'Outfit', sans-serif;
     font-size: var(--text-preset-4);
     color: var(--stone-600);
+}
+
+.nutrition p {
+    margin: var(--spacing-300) 0;
 }
 
 ul {
@@ -63,12 +68,12 @@ ul {
     padding: 0;
 }
 
-li {
+ul li {
     display: flex;
     align-items: center;
 }
 
-li::before {
+ul li::before {
     display: inline-block;
     content: '';
     width: var(--spacing-200);
@@ -101,4 +106,133 @@ section.preparation ul {
 
 section.preparation ul li span {
     font-weight: 400;
+}
+
+section.ingredients h2,
+section.instructions h2,
+section.nutrition h2 {
+    font-family: 'Young Serif', serif;
+    font-size: var(--text-preset-2);
+    font-weight: 400;
+    line-height: var(--text-preset-2);
+    color: var(--brown-800);
+    margin-bottom: var(--spacing-300);
+}
+
+/* In this section values are copied from Figma */
+section.ingredients ul,
+section.instructions ol {
+    color: var(--color-stone-600, #5F564D);
+    font-family: Outfit;
+    font-size: var(--font-size-desktop-text-preset-4, 1rem);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    /* 1.5rem */
+}
+
+hr {
+    margin-top: var(--spacing-400);
+    margin-bottom: var(--spacing-400);
+    border: 0.0625rem solid var(--stone-150);
+}
+
+ol {
+    counter-reset: list-counter;
+    /* Initialize the counter */
+    list-style: none;
+    /* Remove default number markers */
+    padding-left: 0;
+    /* Remove default padding */
+}
+
+ol li {
+    position: relative;
+    /* For controlling the positioning of the numbers */
+    padding-left: 40px;
+    /* Space for the number markers */
+}
+
+ol li::before {
+    content: counter(list-counter) '.';
+    /* Display the counter with a dot */
+    counter-increment: list-counter;
+    /* Increment the counter for each <li> */
+    display: inline-block;
+    width: var(--spacing-200);
+    /*Control the width of the marker area (adjust as needed)*/
+    margin-right: var(--spacing-200);
+    /* Add space between number and text */
+    font-weight: bold;
+    /* Make the numbers bold (optional) */
+    color: var(--custom-marker-color, #854632);
+    /* Change color of the marker */
+    font-size: var(--text-preset-4);
+    position: absolute;
+    /* Position the marker to the left of the text */
+    left: var(--spacing-100);
+    /* Align the marker to the left of the li */
+}
+
+/*** Table ***/
+
+/* Table Borders */
+table {
+    border-collapse: collapse;
+    border-style: hidden;
+    width: 100%;
+}
+
+table td,
+table th {
+    border-bottom: 1px solid var(--color-stone-150, #E3DDD7);
+    text-align: left;
+}
+
+table th {
+    padding-left: var(--spacing-400);
+    padding-top: var(--spacing-150);
+    padding-bottom: var(--spacing-150);
+}
+
+table td {
+    padding-left: var(--spacing-200);
+    padding-right: var(--spacing-400);
+    padding-top: var(--spacing-150);
+    padding-bottom: var(--spacing-150);
+}
+
+/* Remove top padding from the first row */
+tr:first-child th,
+tr:first-child td {
+    padding-top: 0;
+}
+
+/* Remove bottom padding from the last row */
+tr:last-child th,
+tr:last-child td {
+    padding-bottom: 0;
+}
+
+/* Table Typography */
+th {
+    color: var(--color-stone-600, #5F564D);
+    /* Desktop/text-preset-4 */
+    font-family: Outfit;
+    font-size: var(--font-size-desktop-text-preset-4, 1rem);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    /* 1.5rem */
+}
+
+td {
+    color: var(--color-brown-800, #854632);
+    /* Desktop/text-preset-4-bold */
+    font-family: Outfit;
+    font-size: var(--font-size-desktop-text-preset-4, 1rem);
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%;
+    /* 1.5rem */
 }
