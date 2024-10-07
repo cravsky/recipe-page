@@ -3,7 +3,6 @@
     src: url(../assets/fonts/young-serif/YoungSerif-Regular.ttf) format('woff2');
     font-weight: 400;
     font-style: normal;
-    /* font-display: swap; */
 }
 
 @font-face {
@@ -30,14 +29,12 @@ article.card {
     background-color: var(--white);
     border-radius: var(--spacing-300);
     padding: var(--spacing-500);
-    width: 46rem;
+    max-width: 46rem;
     /* 736px */
 }
 
 img {
     border-radius: var(--spacing-150);
-    height: 18.75rem;
-    /* 300px */
 }
 
 header {
@@ -49,7 +46,8 @@ header h1 {
     font-family: 'Young Serif', serif;
     font-size: var(--text-preset-1);
     color: var(--stone-900);
-    line-height: var(--spacing-500);
+    line-height: 100%;
+    font-weight: 400;
 }
 
 header p,
@@ -139,18 +137,13 @@ hr {
 
 ol {
     counter-reset: list-counter;
-    /* Initialize the counter */
     list-style: none;
-    /* Remove default number markers */
     padding-left: 0;
-    /* Remove default padding */
 }
 
 ol li {
     position: relative;
-    /* For controlling the positioning of the numbers */
     padding-left: 40px;
-    /* Space for the number markers */
 }
 
 ol li::before {
@@ -228,11 +221,37 @@ th {
 
 td {
     color: var(--color-brown-800, #854632);
-    /* Desktop/text-preset-4-bold */
     font-family: Outfit;
     font-size: var(--font-size-desktop-text-preset-4, 1rem);
     font-style: normal;
     font-weight: 700;
     line-height: 150%;
     /* 1.5rem */
+}
+
+@media screen {
+    @media (max-width: 768px) {
+        main {
+            padding: var(--spacing-1600) 4.75rem;
+        }
+    }
+
+    @media (max-width: 500px) {
+        main {
+            padding: 0 0;
+        }
+
+        img {
+            margin-top: -2.5rem;
+        }
+
+        header h1 {
+            margin-bottom: var(--spacing-300);
+            font-family: 'Young Serif', serif;
+            font-size: var(--text-preset-mobile);
+            color: var(--stone-900);
+            line-height: 100%;
+            font-weight: 400;
+        }
+    }
 }
