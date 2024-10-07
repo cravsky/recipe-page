@@ -69,6 +69,7 @@ ul {
 ul li {
     display: flex;
     align-items: center;
+    margin-bottom: var(--spacing-100);
 }
 
 ul li::before {
@@ -146,6 +147,7 @@ ol {
 ol li {
     position: relative;
     padding-left: 40px;
+    margin-bottom: var(--spacing-100);
 }
 
 ol li::before {
