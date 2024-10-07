@@ -85,6 +85,8 @@ ul li::before {
 section.preparation {
     padding: var(--spacing-300);
     font-family: 'Outfit', sans-serif;
+    background-color: var(--rose-50);
+    margin: var(--spacing-400) 0;
 }
 
 section.preparation h2 {
